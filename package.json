@@ -1,0 +1,50 @@
+{
+  "name": "vue3-el-plus",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "dist/vue3-el-plus.js",
+  "main": "dist/vue3-el-plus.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-el-plus.js",
+      "require": "./dist/vue3-el-plus.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "2.3.2",
+    "@file-viewer/preset-office": "^2.1.17",
+    "@file-viewer/vue3": "^2.1.17",
+    "@vueuse/core": "^14.3.0",
+    "dayjs": "^1.11.21",
+    "element-plus": "2.13.2",
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^24.13.2",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-vue": "~10.8.0",
+    "prettier": "3.8.1",
+    "sass-embedded": "^1.97.3",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.63.0",
+    "unocss": "^66.6.0",
+    "unplugin-auto-import": "^21.0.0",
+    "unplugin-vue-components": "^31.0.0",
+    "vite": "^8.1.1",
+    "vue-tsc": "^3.3.5"
+  }
+}
