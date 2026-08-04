@@ -55,14 +55,11 @@ import {showEmpty} from '../../utils/display';
 import type {GloTableColumn, GloTableConfig} from './type';
 import {DEFAULT_TABLE_CONFIG} from './type';
 
-type TableConfigKey = Record<string, unknown>;
-type TableConfigVal = Record<string, unknown>;
-
 const props = withDefaults(
   defineProps<{
-    tableConfig?: GloTableConfig<TableConfigKey, TableConfigVal>;
+    tableConfig?: GloTableConfig;
     tableColumn?: GloTableColumn[];
-    list?: TableConfigVal[];
+    list?: Record<string, unknown>[];
     layout?: string;
     pageSizes?: number[];
     pagerCount?: number;
@@ -78,9 +75,7 @@ const props = withDefaults(
 );
 
 // ---- 响应式合并配置 ----
-const configMerged = computed(
-  () => ({...DEFAULT_TABLE_CONFIG, ...props.tableConfig}) as GloTableConfig<TableConfigKey, TableConfigVal>
-);
+const configMerged = computed(() => ({...DEFAULT_TABLE_CONFIG, ...props.tableConfig}) as GloTableConfig);
 
 // ---- local 模式状态 ----
 const localCurrent = ref(1);
@@ -91,7 +86,7 @@ const isLocal = computed(() => configMerged.value.local || !configMerged.value.r
 
 const tableResult =
   !configMerged.value.local && configMerged.value.req
-    ? useTable<TableConfigKey, TableConfigVal>(configMerged.value.req, {
+    ? useTable(configMerged.value.req, {
         formRef: configMerged.value.formRef,
         formData: configMerged.value.formData,
         transformQuery: configMerged.value.transformQuery,
@@ -103,7 +98,7 @@ const tableResult =
     : null;
 
 // ---- 派生响应式状态 ----
-const records = computed(() => (isLocal.value ? props.list : (tableResult?.records.value ?? [])) as TableConfigVal[]);
+const records = computed(() => (isLocal.value ? props.list : (tableResult?.records.value ?? [])) as Record<string, unknown>[]);
 const loading = computed(() => (isLocal.value ? false : (tableResult?.loading.value ?? false)));
 const totalCount = computed(() => (isLocal.value ? props.list.length : (tableResult?.total.value ?? 0)));
 
