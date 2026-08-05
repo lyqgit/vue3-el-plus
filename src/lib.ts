@@ -13,6 +13,8 @@ export {default as GloDescriptions} from './packages/components/GloDescriptions/
 export type {GloDescriptionsProps, DescriptionsRow} from './packages/components/GloDescriptions/type';
 export {default as GloUpload} from './packages/components/GloUpload/index.vue';
 export type {GloUploadProps, GloUploadEmits, GloUploadExpose, UploadRequest} from './packages/components/GloUpload/type';
+export {default as GloHeaderLabel} from './packages/components/GloHeaderLabel/index.vue';
+export type {GloHeaderLabelProps} from './packages/components/GloHeaderLabel/type';
 
 // hooks
 export {initDict, useDict, getDictLabel, getDictItem} from './packages/hooks/dict';
