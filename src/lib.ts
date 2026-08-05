@@ -47,7 +47,7 @@ export type {
 // utils
 export * from './packages/utils/validate';
 export {showEmpty} from './packages/utils/display';
-export {getFileExtension, getFileUrl} from './packages/utils/file';
+export {getFileExtension, getFileUrl, setFilePrefix} from './packages/utils/file';
 export {tryCatchLoading} from './packages/utils/handler';
 export type {TryCatchLoadingOptions} from './packages/utils/handler';
 export {session, local} from './packages/utils/cache';
