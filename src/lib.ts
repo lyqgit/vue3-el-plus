@@ -15,6 +15,13 @@ export {default as GloUpload} from './packages/components/GloUpload/index.vue';
 export type {GloUploadProps, GloUploadEmits, GloUploadExpose, UploadRequest} from './packages/components/GloUpload/type';
 export {default as GloHeaderLabel} from './packages/components/GloHeaderLabel/index.vue';
 export type {GloHeaderLabelProps} from './packages/components/GloHeaderLabel/type';
+export {default as GloSelectMore} from './packages/components/GloSelectMore/index.vue';
+export type {
+  GloSelectMoreProps,
+  GloSelectMoreEmits,
+  GloSelectMoreExpose,
+  SelectMoreTransOptions
+} from './packages/components/GloSelectMore/type';
 
 // hooks
 export {initDict, useDict, getDictLabel, getDictItem} from './packages/hooks/dict';

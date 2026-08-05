@@ -31,7 +31,7 @@
                 v-bind="rowItem"
               ></slot>
               <span v-else-if="rowItem.dictName">
-                {{ showEmpty(getDictLabel(rowItem.dictName, rowItem.content), rowItem.emptyStr ?? emptyStr) }}
+                {{ showEmpty(getDictLabel(rowItem.dictName, rowItem.content ?? ''), rowItem.emptyStr ?? emptyStr) }}
               </span>
               <span v-else>{{ showEmpty(rowItem.content, rowItem.emptyStr ?? emptyStr) }}</span>
             </span>
