@@ -23,7 +23,8 @@ export function useTable<T = Record<string, unknown>, R = unknown>(
     size: mergeOptions.size,
     pages: 0,
     total: 0,
-    loading: false
+    loading: false,
+    allLoaded: false
   });
 
   async function baseQuery(queryData: Record<string, unknown>, baseOptions: BaseQueryOptions = {}) {
@@ -56,6 +57,7 @@ export function useTable<T = Record<string, unknown>, R = unknown>(
         tableForm.size = pageData.size;
         tableForm.pages = pageData.pages;
         tableForm.total = pageData.total;
+        tableForm.allLoaded = pageData.current >= pageData.pages;
       } else {
         if (Array.isArray(tableRes.data)) {
           tableForm.records = mergeOptions.transformRecords
@@ -88,6 +90,7 @@ export function useTable<T = Record<string, unknown>, R = unknown>(
   }
 
   function loadMore(data: Record<string, unknown> = {}) {
+    if (tableForm.allLoaded) return;
     return baseQuery(Object.assign({current: tableForm.current + 1}, mergeOptions.formData, data), {dataCombine: true});
   }
 

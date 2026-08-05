@@ -24,6 +24,8 @@ export type {
 } from './packages/components/GloSelectMore/type';
 export {default as GloDictTag} from './packages/components/GloDictTag/index.vue';
 export type {GloDictTagProps} from './packages/components/GloDictTag/type';
+export {default as GloInfiniteScroll} from './packages/components/GloInfiniteScroll/index.vue';
+export type {GloInfiniteScrollProps} from './packages/components/GloInfiniteScroll/type';
 
 // hooks
 export {initDict, useDict, getDictLabel, getDictItem} from './packages/hooks/dict';

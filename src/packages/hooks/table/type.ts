@@ -61,6 +61,8 @@ export interface TableState<T = unknown> {
   pages: number;
   total: number;
   loading: boolean;
+  /** 是否已加载全部数据 */
+  allLoaded: boolean;
 }
 
 /** useTable 返回值 */
@@ -71,8 +73,9 @@ export interface UseTableReturn<T = unknown> {
   pages: Ref<number>;
   total: Ref<number>;
   loading: Ref<boolean>;
+  allLoaded: Ref<boolean>;
   search: (data?: Record<string, unknown>) => Promise<void>;
-  loadMore: (data?: Record<string, unknown>) => Promise<void>;
+  loadMore: (data?: Record<string, unknown>) => Promise<void> | undefined;
   handleQuery: (data?: Record<string, unknown>) => Promise<void>;
   resetQuery: (data?: Record<string, unknown>) => Promise<void>;
 }
