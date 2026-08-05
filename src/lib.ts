@@ -9,6 +9,10 @@ export {default as GloPreview} from './packages/components/GloPreview/index.vue'
 export type {GloPreviewProps, GloPreviewOpenOptions, GloPreviewExpose, FileCategory} from './packages/components/GloPreview/type';
 export {default as GloTable} from './packages/components/GloTable/index.vue';
 export type {GloTableConfig, GloTableColumn, GloTableProps, GloTableExpose} from './packages/components/GloTable/type';
+export {default as GloDescriptions} from './packages/components/GloDescriptions/index.vue';
+export type {GloDescriptionsProps, DescriptionsRow} from './packages/components/GloDescriptions/type';
+export {default as GloUpload} from './packages/components/GloUpload/index.vue';
+export type {GloUploadProps, GloUploadEmits, GloUploadExpose, UploadRequest} from './packages/components/GloUpload/type';
 
 // hooks
 export {initDict, useDict, getDictLabel, getDictItem} from './packages/hooks/dict';
