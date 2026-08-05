@@ -305,8 +305,8 @@ function getRowField(row: unknown, field: string): string {
       >
         <GloInfiniteScroll
           :request-api="fetchGrowthRecords"
-          :page-size="5"
-          :distance="20"
+          :page-size="10"
+          :distance="30"
         >
           <template #item="{list}">
             <div

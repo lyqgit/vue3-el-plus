@@ -1,5 +1,6 @@
 <template>
   <el-scrollbar
+    v-loading="loading"
     height="100%"
     :distance="distance"
     @end-reached="handleLoadMore"
@@ -25,7 +26,6 @@
 <script setup lang="ts">
 import {useThrottleFn} from '@vueuse/core';
 import {useTable} from '../../hooks/table';
-import {tryCatchLoading} from '../../utils/handler';
 import type {GloInfiniteScrollProps} from './type';
 
 const props = withDefaults(defineProps<GloInfiniteScrollProps>(), {
@@ -36,20 +36,17 @@ const props = withDefaults(defineProps<GloInfiniteScrollProps>(), {
   throttleTime: 800
 });
 
-const {loadMore, records, allLoaded} = useTable(props.requestApi, {
+const {loadMore, records, allLoaded, loading} = useTable(props.requestApi, {
   formData: props.formData,
   initStart: props.initStart,
   size: props.pageSize
 });
 
-const handleLoadMore = useThrottleFn(
-  tryCatchLoading(async function (direction: string) {
-    if (direction === 'bottom') {
-      await loadMore();
-    }
-  }),
-  props.throttleTime
-);
+const handleLoadMore = useThrottleFn(async function (direction: string) {
+  if (direction === 'bottom') {
+    await loadMore();
+  }
+}, props.throttleTime);
 </script>
 
 <style lang="scss" scoped>
