@@ -22,6 +22,8 @@ export type {
   GloSelectMoreExpose,
   SelectMoreTransOptions
 } from './packages/components/GloSelectMore/type';
+export {default as GloDictTag} from './packages/components/GloDictTag/index.vue';
+export type {GloDictTagProps} from './packages/components/GloDictTag/type';
 
 // hooks
 export {initDict, useDict, getDictLabel, getDictItem} from './packages/hooks/dict';
