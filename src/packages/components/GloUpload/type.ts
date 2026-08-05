@@ -18,7 +18,9 @@ export interface GloUploadProps {
   /** 是否显示进度 @default true */
   showProgress?: boolean;
   /** 自定义上传前验证（最后执行） */
-  customBeforeUpload?: ((file: globalThis.File, ctx: {fileList: string[]; getFileExtension: (filename: string) => string}) => boolean | void) | null;
+  customBeforeUpload?:
+    | ((file: globalThis.File, ctx: {fileList: string[]; getFileExtension: (filename: string) => string}) => boolean | void)
+    | null;
   /** 是否为更换图片模式 @default false */
   isChangeImg?: boolean;
   /** 上传请求函数 */
