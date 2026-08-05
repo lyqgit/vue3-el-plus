@@ -4,7 +4,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn';
 import 'element-plus/dist/index.css';
 import 'virtual:uno.css'; // 引入 UnoCSS 样式
 import App from './App.vue';
-import {initDict} from './packages/hooks/dict';
+import {dictPlugin} from './packages/hooks/dict';
 import type {DictData} from './packages/hooks/dict/type';
 
 // 字典数据
@@ -19,10 +19,4 @@ const dictData: DictData = {
   ]
 };
 
-initDict(dictData);
-
-createApp(App)
-  .use(ElementPlus, {
-    locale: zhCn
-  })
-  .mount('#app');
+createApp(App).use(ElementPlus, {locale: zhCn}).use(dictPlugin, dictData).mount('#app');

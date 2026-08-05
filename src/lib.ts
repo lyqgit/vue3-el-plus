@@ -28,7 +28,7 @@ export {default as GloInfiniteScroll} from './packages/components/GloInfiniteScr
 export type {GloInfiniteScrollProps} from './packages/components/GloInfiniteScroll/type';
 
 // hooks
-export {initDict, useDict, getDictLabel, getDictItem} from './packages/hooks/dict';
+export {initDict, useDict, getDictLabel, getDictItem, dictPlugin} from './packages/hooks/dict';
 export type {DictItem, DictData, DictObject} from './packages/hooks/dict/type';
 export {useTable} from './packages/hooks/table';
 export type {

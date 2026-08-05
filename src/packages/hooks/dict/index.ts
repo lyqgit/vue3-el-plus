@@ -1,5 +1,5 @@
 import {isEmpty, isArray} from '@/packages/utils/validate';
-import {ref, toRefs} from 'vue';
+import {ref, toRefs, type App, type Plugin} from 'vue';
 import type {ToRefs} from 'vue';
 import type {DictData, DictItem, DictObject} from './type';
 
@@ -106,3 +106,12 @@ export function getDictItem(dictName: string, value: string | number): DictItem 
 
   return dict?.getItem(value);
 }
+
+/**
+ * Vue 插件，app.use(dictPlugin, dictData) 即可初始化字典
+ */
+export const dictPlugin: Plugin = {
+  install(_app: App, data: DictData) {
+    initDict(data);
+  }
+};
