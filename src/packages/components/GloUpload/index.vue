@@ -100,6 +100,7 @@ import {tryCatchLoading} from '../../utils/handler';
 import {getFileExtension, getFileUrl} from '../../utils/file';
 import type {GloUploadProps, GloUploadEmits, GloUploadExpose} from './type';
 import IconUpload from '@/assets/icon-upload.png';
+import GloPreview from '../GloPreview';
 
 const slots = useSlots();
 

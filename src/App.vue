@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import GloTable, {type GloTableColumn, type GloTableConfig} from './packages/components/GloTable';
 import GloDialog, {type GloDialogExpose} from './packages/components/GloDialog';
+import GloUpload from './packages/components/GloUpload';
 import {ref, reactive} from 'vue';
 import axios from 'axios';
 
@@ -218,6 +219,7 @@ const tableRef = ref();
       ref="gloDialogRef"
       title="测试"
     />
+    <GloUpload />
     <el-button
       type="primary"
       @click="openDialog"

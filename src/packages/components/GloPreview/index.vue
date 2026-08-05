@@ -62,13 +62,16 @@ import {ElMessage} from 'element-plus';
 import officePreset from '@file-viewer/preset-office';
 import {getFileExtension, getFileUrl} from '../../utils/file';
 import type {GloPreviewProps, GloPreviewOpenOptions, GloPreviewExpose, FileCategory} from './type';
+import GloDialog from '../GloDialog';
+import {FileViewer} from '@file-viewer/vue3';
+import type {FileViewerOptions} from '@file-viewer/vue3';
 
 const props = withDefaults(defineProps<GloPreviewProps>(), {
   showProgress: true,
   filePrefix: ''
 });
 
-const options = {
+const options: FileViewerOptions = {
   preset: officePreset,
   rendererMode: 'replace',
   theme: 'light',
