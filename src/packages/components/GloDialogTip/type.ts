@@ -6,6 +6,10 @@ export interface GloDialogTipProps {
   title?: string;
   /** 图标组件 @default WarningFilled */
   icon?: Component;
+  /** 图标颜色 @default '#FF832B' */
+  iconColor?: string;
+  /** 图标大小 @default '24px' */
+  iconSize?: string;
   /** 提示内容 */
   content?: string;
   /** 是否垂直居中 @default true */

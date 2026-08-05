@@ -15,10 +15,13 @@
         v-if="!slots.CustomHeader"
         class="mid-center"
       >
-        <component
-          :is="icon"
+        <el-icon
           v-if="!slots.CustomIcon"
-        />
+          :color="iconColor"
+          :style="{fontSize: iconSize}"
+        >
+          <component :is="icon" />
+        </el-icon>
         <slot
           v-else
           name="CustomIcon"
@@ -63,6 +66,8 @@ const slots = useSlots();
 const props = withDefaults(defineProps<GloDialogTipProps>(), {
   title: '',
   icon: () => WarningFilled,
+  iconColor: '#FF832B',
+  iconSize: '24px',
   content: '',
   alignCenter: true,
   width: '500px',
